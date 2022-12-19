@@ -199,6 +199,7 @@
    			<td style="color: darkorange;">Số lượng</td>
    			<td style="color: darkorange;">Giá</td>
    			<td style="color: darkorange;">Thành tiền</td>
+   			<td style="color: darkorange;">Ngày</td>
    		</tr>
 	<%ArrayList<xacnhanbean> ds=(ArrayList<xacnhanbean>)request.getAttribute("ds");
      for(xacnhanbean xn: ds){
@@ -210,6 +211,7 @@
         <td>  <%=xn.getSoLuongMua() %> </td>
         <td>  <%=xn.getGia() %> </td>
         <td>  <%=xn.getThanhTien()%> </td>
+        <td>  <%=xn.getNgay()%> </td>
         <td>  
         <a href="xacnhanchuyentien?mct=<%=xn.getMaChiTietHD()%>">
            Xác nhận

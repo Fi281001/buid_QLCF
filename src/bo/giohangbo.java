@@ -39,7 +39,7 @@ public class giohangbo {
 		return Sum;
 	}
 	
-	public int countBook() {
+	public int count() {
 		int count = 0;
 		for (giobean g: ds) {
 			count++;

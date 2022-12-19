@@ -147,7 +147,7 @@
                     <li>
 					
 					      <% if (session.getAttribute("admin") == null){ %>
-					    	 <a  class="nav-link" href="ktdn"><span class="glyphicon glyphicon-user"></span>Log In</a>
+					    	 <a  class="nav-link" href="dnadmin"><span class="glyphicon glyphicon-user"></span>Log In</a>
 					      <%}else{ %>
 					    	 <a  a class="nav-link" href="#"><span class="glyphicon glyphicon-user">
 					    	 	<% dnadminbean kh =(dnadminbean)session.getAttribute("admin");
@@ -179,7 +179,7 @@
           			 <a class="nav-link" href="loai">Quản lý loại</a>
           			 <a class="nav-link" href="addcafe">Quản lý cafe</a>
           			 <a class="nav-link" href="xacnhanadmin">Xác Nhận Chuyển Tiền</a>
-          			 <a class="nav-link" href="xacnhanchuyentien">danh sách chuyển tiền</a>
+          			 <a class="nav-link" href="dschuyentien">danh sách chuyển tiền</a>
           		</div>
          </div>
       </div>

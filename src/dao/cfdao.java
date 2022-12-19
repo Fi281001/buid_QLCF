@@ -11,10 +11,10 @@ import bean.loaibean;
 import bean.cfbean;
 public class cfdao {
 
-	public ArrayList<cfbean> getsach() {
+	public ArrayList<cfbean> getcf() {
 
 		try {
-			ArrayList<cfbean> dssach = new ArrayList<cfbean>();
+			ArrayList<cfbean> dscf = new ArrayList<cfbean>();
 //			   b1: ket noi vao csdl
 			   CoSodao cs = new CoSodao();
 			   cs.KetNoi();
@@ -30,14 +30,14 @@ public class cfdao {
 				   long gia = rs.getLong("gia");
 				   String anh = rs.getString("anh");
 				   String maLoai = rs.getString("maloai");
-				   dssach.add(new	cfbean(macafe, tencafe, soLuong, gia, anh, maLoai));
+				   dscf.add(new	cfbean(macafe, tencafe, soLuong, gia, anh, maLoai));
 
 			   }
 
 			   rs.close();
 			   cs.cn.close();
 
-			   return dssach;
+			   return dscf;
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();

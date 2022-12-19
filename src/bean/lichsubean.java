@@ -9,26 +9,28 @@ public class lichsubean {
 	int gia;
 	int ThanhTien;
 	boolean damua;
-	Date NgayMua;
+	Date Ngaymua;
 	
 	public lichsubean() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
 
-	
-	public lichsubean(String tencafe, int soLuongMua, int gia, int thanhTien, boolean damua, Date NgayMua) {
+
+	public lichsubean(String tencafe, int soLuongMua, int gia, int thanhTien, boolean damua, Date ngaymua) {
 		super();
 		this.tencafe = tencafe;
 		SoLuongMua = soLuongMua;
 		this.gia = gia;
 		ThanhTien = thanhTien;
 		this.damua = damua;
-		NgayMua = NgayMua;
+		Ngaymua = ngaymua;
 	}
+
+
+
+
+
 
 
 
@@ -70,12 +72,16 @@ public class lichsubean {
 	}
 
 
-	public Date getNgayMua() {
-		return NgayMua;
+	public Date getNgaymua() {
+		return Ngaymua;
 	}
 
-	public void setNgayMua(Date NgayMua) {
-		NgayMua = NgayMua;
+
+	public void setNgaymua(Date ngaymua) {
+		Ngaymua = ngaymua;
 	}
+	
+	
+	
 	
 }

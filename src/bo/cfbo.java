@@ -9,8 +9,8 @@ public class cfbo {
 	cfdao cfdao = new cfdao();
 	ArrayList<cfbean> ds;
 	
-	public ArrayList<cfbean> getsach(){
-		ds = cfdao.getsach();
+	public ArrayList<cfbean> getcf(){
+		ds = cfdao.getcf();
 		
 		return ds;
 	}

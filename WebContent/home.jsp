@@ -1,3 +1,4 @@
+<%@page import="bo.giohangbo"%>
 <%@page import="bean.khachhangbean"%>
 <%@page import="bean.cfbean"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -45,6 +46,7 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
      	<style>
+     	
   		.search2	 {
   			    margin: 5px;
   		}
@@ -88,10 +90,14 @@
   			justify-content: center;
   			
   		}
+  		.w{
+  			height: 100;
+  		}
   	</style>
    </head>
    <body>
-  <% 	ArrayList<cfbean> ds = (ArrayList<cfbean>)request.getAttribute("ds");
+  <% giohangbo gh = (giohangbo) session.getAttribute("gio"); 	
+  ArrayList<cfbean> ds = (ArrayList<cfbean>)request.getAttribute("ds");
 	int st = (ds.size()/10 == 0) ? 1 : ds.size()/10;
 	
 	if(ds.size()/10 != 0) st++;
@@ -110,7 +116,23 @@
                         <a class="nav-link" href="home">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="giohang">Cart</a>
+                     
+                        <a class="nav-link" href="giohang">Cart
+                         <% if (gh != null){
+			    	  if (gh.count() == 0)
+				    		out.print("");
+				    	else{
+				    		out.print("(" + gh.count() + ")");
+				    	} 
+			      }
+			      else{
+			    	  out.print("");
+			      }
+			      
+			      %>
+                        </a>
+                        
+			      	
                      </li>
                     
                      <li class="nav-item">
@@ -180,7 +202,7 @@
       </div>
       <!-- banner section end -->
      	 <!--hiển thị-->	
-             
+       <div class="w">     
       <div class="about_section layout_padding">
          <div class="container">
             	<div>
@@ -188,6 +210,7 @@
 			<div class="ht">
 			<div>
 		    <ul class="ul" >
+		    
 				<%
 				request.setCharacterEncoding("utf-8");
 				response.setCharacterEncoding("uft-8");
@@ -201,12 +224,9 @@
 				%>
 		    </ul>
 		    </div>
-		    <div>
+		    <div style="text-align:  center">
 		    <table width="1000px" style="padding: 0 25px">
-		    			<% if(ds.isEmpty()){
-		    			response.sendRedirect("home");
-		    				}
-		    			else { %>
+		    		
 		    		
 		   		    <% 
 		   		    
@@ -216,6 +236,12 @@
 		   		 	if(trang  == ds.size()/10 +1){
 	   					if(ds.size()%10 != 0)end = (trang -1)*10 + ds.size()%10;
 	   				} 
+		   		 	if(ds.isEmpty()){%>
+		   		 		<h3 style="font-size: 28px; text-align: center;">Không có sản phẩm cần tìm</h3>
+		   		 		<br>
+		   		 		<a  class="btn-action-1" href="home">Quay lại trang chủ</a>
+		   		 	<%}
+		   		 	else
 			   		    for(int i=start; i < end;i++){
 			   		    	cfbean s = ds.get(i);
 			   		%> 
@@ -223,7 +249,7 @@
 				   		      <td  style="text-align: center;">
 					   		  	 <img class="img" style="border-radius: 6px" src="<%=s.getAnh() %>"> <br>
 					   		     <%=s.getTencafe() %> <br>
-					   		     <%=s.getGia() %><br>
+					   		     <%=s.getGia() %>Đ<br>
 					   		     
 					   		     <a href="giohang?add=true&mcf=<%=s.getMacafe()%>&ten=<%=s.getTencafe()%>&gia=<%=s.getGia()%>&anh=<%=s.getAnh()%>">
 					   		     	<img class="anhbuy" src="anhbuy.png"/>
@@ -237,7 +263,7 @@
 							   		    <img class="img" style="border-radius: 6px" src="<%=s.getAnh() %>"> <br>
 							   		    <%=s.getTencafe()%> <br>
 							   	     	
-							   		    <%=s.getGia() %><br>
+							   		    <%=s.getGia() %>Đ<br>
 							   		    <a href="giohang?add=true&mcf=<%=s.getMacafe()%>&ten=<%=s.getTencafe()%>&gia=<%=s.getGia()%>&anh=<%=s.getAnh()%>">
 					   		     	<img class="anhbuy" src="anhbuy.png"/>
 					   		     </a>
@@ -251,7 +277,7 @@
 							   		    <img class="img" style="border-radius: 6px" src="<%=s.getAnh() %>"> <br>
 							   		    <%=s.getTencafe()%> <br>
 							   	     	
-							   		    <%=s.getGia() %><br>
+							   		    <%=s.getGia() %>Đ<br>
 							   		    <a href="giohang?add=true&mcf=<%=s.getMacafe()%>&ten=<%=s.getTencafe()%>&gia=<%=s.getGia()%>&anh=<%=s.getAnh()%>">
 					   		     	<img class="anhbuy" src="anhbuy.png"/>
 					   		     </a>
@@ -289,13 +315,13 @@
 						   
 						    %>
 				    <li class="page-item"><a class="page-link" href="home?trang=<%=next%>">Next</a></li>
-				    <%} %>
+				    
 				  </ul>
 				</nav> 
 	</div>
          </div>
       </div>
-          <!-- end hiển thị -->
+       </div><!-- end hiển thị -->
       <!-- gallery section end -->
       
    <!--    <!-- footer section start -->

@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Đăng nhập</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -78,7 +78,7 @@ span.psw {
 <div style="margin-top: 150px">
 <div align="center">
 <div class="main">
-<h2 align="center">Login Form</h2>
+<h2 align="center">Đăng Nhập</h2>
 
 <form action="ktdn" method="post">
 

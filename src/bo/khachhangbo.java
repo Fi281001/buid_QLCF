@@ -22,7 +22,7 @@ public class khachhangbo {
 		return null;
 	}
 	
-	public boolean themkhachhang(String hoten, String diachi, long sodt ,String email, String tendangnhap, String matkhau) {
+	public boolean themkhachhang(String hoten, String diachi,String email, String tendangnhap, String matkhau) {
 		try {
 			dskhg = khgdao.getdskhachhang();
 			for(khachhangbean kh:dskhg) {
@@ -31,7 +31,7 @@ public class khachhangbo {
 				}
 			}
 			
-			int kt =khgdao.ThemKhachHang(hoten, diachi, sodt, email, tendangnhap, matkhau);
+			int kt =khgdao.ThemKhachHang(hoten, diachi, email, tendangnhap, matkhau);
 			return true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -145,7 +145,21 @@
                         <a class="nav-link" href="home">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="giohang">Cart</a>
+                        <a class="nav-link" href="giohang">Cart
+                           <% if (gh != null){
+			    	  if (gh.count() == 0)
+				    		out.print("");
+				    	else{
+				    		out.print("(" + gh.count() + ")");
+				    	} 
+			      }
+			      else{
+			    	  out.print("");
+			      }
+			      
+			      %>
+                        
+                        </a>
                      </li>
                     
                      <li class="nav-item">
@@ -192,11 +206,11 @@
 		    	
 		    	
 		    				<tr height="30">
-		    					<td width="199px" style="font-weight: 700">Tên</td>
-		    					<td width="199px" style="font-weight: 700">Gia</td>
-		    					<td width="199px" style="font-weight: 700">So Luong</td>
-		    					<td  width="199px" style="font-weight: 700">Thanh Tien</td>
-		    					
+		    					<td width="199px" style="font-weight: 700; color: #f76d37">Tên</td>
+		    					<td width="199px" style="font-weight: 700; color: #f76d37">Gia</td>
+		    					<td width="199px" style="font-weight: 700; color: #f76d37">So Luong</td>
+		    					<td  width="199px" style="font-weight: 700; color: #f76d37">Thanh Tien</td>
+		    					<td  width="199px" style="font-weight: 700; color: #f76d37">Ngày Mua</td>
 		    				</tr>
 		    		
 		    		<% if (request.getAttribute("ds") != null){
@@ -209,7 +223,7 @@
 		    					<td><%=o.getGia() %></td>
 		    					<td><%=o.getSoLuongMua() %></td>
 		    					<td><%=o.getThanhTien() %></td>
-		    					
+		    					<td><%=o.getNgaymua() %></td>
 		    				</tr>
 		    			<%
 		    			}%>

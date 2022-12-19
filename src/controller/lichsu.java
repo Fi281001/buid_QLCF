@@ -42,7 +42,7 @@ public class lichsu extends HttpServlet {
 		HttpSession session = request.getSession();
 		khachhangbean kh = (khachhangbean) session.getAttribute("kh");
 		cfbo sbo = new cfbo();
-		ArrayList<cfbean> ds2 = sbo.getsach();
+		ArrayList<cfbean> ds2 = sbo.getcf();
 		
 		
 		 if (request.getParameter("search")!=null){

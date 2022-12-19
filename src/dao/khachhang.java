@@ -38,19 +38,19 @@ public class khachhang {
 				return null;
 			}
 	   }
-	public int ThemKhachHang(String hoten, String diachi, long sodt ,String email, String tendangnhap, String matkhau) throws Exception{
+	public int ThemKhachHang(String hoten, String diachi, String email, String tendangnhap, String matkhau) throws Exception{
 		CoSodao cs = new CoSodao();
 		cs.KetNoi();
 		
-     String sql = "insert into KhachHang (hoten, diachi, sodt, email, tendn, pass) values (?,?,?,?,?,?)";
+     String sql = "insert into KhachHang (hoten, diachi, email, tendn, pass) values (?,?,?,?,?)";
      PreparedStatement cmd = cs.cn.prepareStatement(sql);    
      
      cmd.setString(1, hoten);
      cmd.setString(2, diachi);
-     cmd.setLong(3, sodt);
-     cmd.setString(4, email);
-     cmd.setString(5, tendangnhap);
-     cmd.setString(6, matkhau);
+
+     cmd.setString(3, email);
+     cmd.setString(4, tendangnhap);
+     cmd.setString(5, matkhau);
      
      return cmd.executeUpdate();
  }

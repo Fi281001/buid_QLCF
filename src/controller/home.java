@@ -41,13 +41,13 @@ request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		loaibo lbo = new loaibo();
 		ArrayList<loaibean> dsloai = lbo.getloai();
-		
+		 
 		request.setAttribute("dsloai", dsloai);
 		
 		cfbo sbo = new cfbo();
-		ArrayList<cfbean> ds = sbo.getsach();
+		ArrayList<cfbean> ds = sbo.getcf();
 		
-		
+		  
 		 if (request.getParameter("search")!=null){
 			 ds = sbo.timKiemTheoTen(ds, request.getParameter("search"));
 			

@@ -41,7 +41,7 @@ public class giohang extends HttpServlet {
 		HttpSession session = request.getSession();
 		khachhangbean kh = (khachhangbean) session.getAttribute("kh");
 		cfbo sbo = new cfbo();
-		ArrayList<cfbean> ds2 = sbo.getsach();
+		ArrayList<cfbean> ds2 = sbo.getcf();
 		
 		
 		 if (request.getParameter("search")!=null){
@@ -86,6 +86,8 @@ public class giohang extends HttpServlet {
 		
 		else if (request.getParameter("removeall") != null){
 			gh.XoaAll();
+
+			
 		}
 		else if (request.getParameter("suanhieu") != null && request.getParameter("delete") != null) {
 			

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% session.removeAttribute("un");
+	<% session.removeAttribute("kh");
 		response.sendRedirect("dangnhap.jsp");
 		/* session.removeAttribute("gio");
 		response.sendRedirect("htsach"); */

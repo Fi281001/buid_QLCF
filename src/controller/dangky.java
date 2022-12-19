@@ -38,12 +38,12 @@ public class dangky extends HttpServlet {
 		String tk = request.getParameter("tk");
 		String matkhau = request.getParameter("password");
 		String matkhau2 = request.getParameter("password2");
-		if (hoten != null && diachi != null && request.getParameter("sodt") != null && email != null && tk != null && matkhau != null && matkhau2 != null ) {
+		if (hoten != null && diachi != null  && email != null && tk != null && matkhau != null && matkhau2 != null ) {
 			 khachhangbo kh = new khachhangbo();
-			 long sodt = Long.parseLong(request.getParameter("sodt"));
+		
 			if(matkhau.equals(matkhau2)) {
 				
-				if( kh.themkhachhang(hoten, diachi, sodt, email, hoten, matkhau2)== false) {
+				if( kh.themkhachhang(hoten, diachi, email, tk, matkhau2)== false) {
 					RequestDispatcher rd = request.getRequestDispatcher("dangky.jsp");
 					rd.forward(request, response);
 				}else {

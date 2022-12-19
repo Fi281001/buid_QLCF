@@ -130,7 +130,10 @@
                         <a class="nav-link" href="home">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="giohang">Cart</a>
+                        <a class="nav-link" href="giohang">Cart ( <%=gh.count() %> )
+                        </a>
+                       
+			      
                      </li>
                     
                      <li class="nav-item">
@@ -166,7 +169,7 @@
      
       <!-- banner section end -->
      	 <!--hiển thị-->	
-             
+       
       <div class="about_section layout_padding">
          <div  style="text-align: center;margin-left: 380px">
        		<h1 style="margin-right: 300px;  font-size: 68px; color: #f76d37">Cart</h1>
@@ -184,7 +187,7 @@
 		   			
 		   			long tongTien = 0;
 		   			if (gh.ds.size() == 0){%>
-		   				<!-- response.sendRedirect("home"); -->
+		   				
 						<h3 style="text-align: center; margin-right: 380px">không có sản phẩm</h3>
 					<% }%>
 		   			
@@ -209,10 +212,10 @@
 			   					</form>
 			   				</td>
 			   				<td>
-			   					<%=item.getGia() %>
+			   					<%=item.getGia() %>Đ
 			   				</td>
 			   				<td>
-			   					<%=item.getThanhtien() %>
+			   					<%=item.getThanhtien() %>Đ
 			   				</td>
 			   				<td>
 			   					<a class="test" href="giohang?mcf=<%=item.getMacafe() %>&remove=1">&times</a>
@@ -223,10 +226,10 @@
 		   			<%}%>
 		   			<tr>
 		   				<td style="font-size: 24px; font-weight: bold;" colspan="2">Tổng tiền: </td>
-		   				<td style="font-size: 24px; font-weight: bold"><%=tongTien %></td>
+		   				<td style="font-size: 24px; font-weight: bold"><%=tongTien %>Đ</td>
 		   				<td>
 		   					<form id="form-1" method="post" action="giohang?suanhieu=true&">
-		   						<input  type="submit" value="Xóa đã chọn"/>
+		   						<input   type="submit" value="Xóa đã chọn"/>
 		   					</form>
 		   				</td>
 		   			</tr>

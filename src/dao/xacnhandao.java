@@ -1,9 +1,10 @@
 package dao;
 
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 
 import bean.xacnhanbean;
 
@@ -25,7 +26,8 @@ public class xacnhandao {
 				  long gia=rs.getLong("gia");;
 				  long ThanhTien=rs.getLong("ThanhTien");;
 				  boolean damua=rs.getBoolean("damua");
-				  ds.add(new  xacnhanbean(MaChiTietHD, MaHoaDon, hoten, tencafe, SoLuongMua, gia, ThanhTien, damua));
+				  Date NgayMua = rs.getDate("NgayMua");
+				  ds.add(new  xacnhanbean(MaChiTietHD, MaHoaDon, hoten, tencafe, SoLuongMua, gia, ThanhTien, damua, NgayMua));
 			}
 			rs.close();kn.cn.close();
 			return ds;
@@ -63,7 +65,8 @@ public class xacnhandao {
 				  long gia=rs.getLong("gia");;
 				  long ThanhTien=rs.getLong("ThanhTien");;
 				  boolean damua=rs.getBoolean("damua");
-				  ds.add(new xacnhanbean(MaChiTietHD, MaHoaDon, hoten, tencafe, SoLuongMua, gia, ThanhTien, damua));
+				  Date NgayMua = rs.getDate("NgayMua");
+				  ds.add(new xacnhanbean(MaChiTietHD, MaHoaDon, hoten, tencafe, SoLuongMua, gia, ThanhTien, damua, NgayMua));
 			}
 			rs.close();kn.cn.close();
 			return ds;

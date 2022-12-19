@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -68,10 +68,17 @@ span.psw {
      width: 100%;
   }
 }
+	.main{
+	text-align: left;
+	width: 300px;
+	}
 </style>
 </head>
-<body>
-<h2>Login Form</h2>
+<body >
+<div style="margin-top: 150px">
+<div align="center">
+<div class="main">
+<h2 align="center">Login Form</h2>
 
 <form action="dnadmin" method="post">
 
@@ -82,7 +89,7 @@ span.psw {
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="txtpass" required>
         
-    <input style="background: #04AA6D" name="butdn" type="submit" value="Login">
+    <input style="background: darkorange" name="butdn" type="submit" value="Login">
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
@@ -92,6 +99,8 @@ span.psw {
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
-	
+</div>
+</div>
+</div>
 </body>
 </html>

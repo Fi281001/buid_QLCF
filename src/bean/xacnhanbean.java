@@ -1,6 +1,6 @@
 package bean;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class xacnhanbean {
 	private long MaChiTietHD;
@@ -11,24 +11,26 @@ public class xacnhanbean {
    private long gia;
    private long ThanhTien;
    private boolean damua;
+   private Date Ngay;
 public xacnhanbean() {
 	super();
 	// TODO Auto-generated constructor stub
 }
+
 public xacnhanbean(long maChiTietHD, long maHoaDon, String hoten, String tencafe, long soLuongMua, long gia,
-		long thanhTien, boolean damua) {
+		long thanhTien, boolean damua, Date ngay) {
 	super();
 	MaChiTietHD = maChiTietHD;
 	MaHoaDon = maHoaDon;
-	
 	this.hoten = hoten;
 	this.tencafe = tencafe;
 	SoLuongMua = soLuongMua;
 	this.gia = gia;
 	ThanhTien = thanhTien;
-	
 	this.damua = damua;
+	Ngay = ngay;
 }
+
 public long getMaChiTietHD() {
 	return MaChiTietHD;
 }
@@ -80,6 +82,14 @@ public boolean isDamua() {
 }
 public void setDamua(boolean damua) {
 	this.damua = damua;
+}
+
+public Date getNgay() {
+	return Ngay;
+}
+
+public void setNgay(Date ngay) {
+	Ngay = ngay;
 }
 
 }

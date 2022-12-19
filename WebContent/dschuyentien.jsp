@@ -185,7 +185,7 @@
           			 <a class="nav-link" href="loai">Quản lý loại</a>
           			 <a class="nav-link" href="addcafe">Quản lý cafe</a>
           			 <a class="nav-link" href="xacnhanadmin">Xác Nhận Chuyển Tiền</a>
-          			 <a class="nav-link" href="xacnhanchuyentien">danh sách chuyển tiền</a>
+          			 <a class="nav-link" href="dschuyentien">danh sách chuyển tiền</a>
           			 
           		</div>
          </div>
@@ -200,6 +200,7 @@
    			<td style="color: darkorange;">Số lượng</td>
    			<td style="color: darkorange;">Giá</td>
    			<td style="color: darkorange;">Thành tiền</td>
+   			<td style="color: darkorange;">Ngày</td>
    		</tr>
 	<%ArrayList<xacnhanbean> ds=(ArrayList<xacnhanbean>)request.getAttribute("dsxn");
      for(xacnhanbean xn: ds){
@@ -211,8 +212,7 @@
         <td>  <%=xn.getSoLuongMua() %> </td>
         <td>  <%=xn.getGia() %> </td>
         <td>  <%=xn.getThanhTien()%> </td>
-        <td>  
-       
+ 		<td>  <%=xn.getNgay()%> </td>
         </tr>
      <%} %>  
 	  </table>

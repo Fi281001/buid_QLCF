@@ -42,8 +42,9 @@ public class xacnhanchuyentien extends HttpServlet {
 		 if(mct != null) {
 			 xnbo.Xacnhan(mact);
 			 //request.setAttribute("dsxn", xnbo.getdanhsach());
+	
 		 }
-			RequestDispatcher rd=request.getRequestDispatcher("admin.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("xacnhanadmin");
 			rd.forward(request, response);
 	}
 

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Đăng ký</title>
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -67,15 +67,15 @@ a {
 .signin {
   background-color: #f1f1f1;
   text-align: center;
-}
+} 
 </style>
 </head>
 <body>
-<div>
-	<form action="dangky">
+<div class="dk" style="margin: 0 auto;">
+	<form action="dangky" style="width: 500px; margin: 0 auto;">
   <div  class="container">
   
-    <h1 align="center">Register</h1>
+    <h1 align="center">Đăng ký</h1>
 
     <hr>
     <label for="email"><b>Họ tên</b></label>
@@ -84,8 +84,6 @@ a {
      <label for="email"><b>Địa chỉ</b></label>
     <input type="text" placeholder="địa chỉ" name="diachi" id="email" required>
 
-    <label for="email"><b>Số điện thoại</b></label>
-    <input type="text" placeholder="Số điện thoại" name="sodt" id="email" required>
     
      <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
