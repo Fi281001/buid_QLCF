@@ -58,18 +58,24 @@ public class loaidao {
 			 cmd.close();
 			 return kq;
 			 }
-		   public int update(String ten, String maloai1,String maloai) throws Exception{
+		   public int update(String ten, String maloai) throws Exception{
 				 //Ket Noi
 				   CoSodao cs = new CoSodao();
 					cs.KetNoi();
-				 String sql="UPDATE loai"+" SET tenloai = ?"+", maloai = ?"+" WHERE maloai =?";
+				 String sql="update loai set tenloai =? "+" where maloai=?";
 				 PreparedStatement cmd= cs.cn.prepareStatement(sql);
 				  cmd.setString(1, ten);
-				  cmd.setString(2, maloai1);
-				  cmd.setString(3, maloai);
+				  cmd.setString(2, maloai);
+				
 				  int kq=cmd.executeUpdate();
 				 cmd.close();
 				 return kq;
 				 
 		   }
+		   
+		   public static void main(String[] args) throws Exception {
+			
+		}
+		   
+		   
 }

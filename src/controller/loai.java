@@ -34,6 +34,8 @@ public class loai extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		loaibo lbo = new loaibo();
 		
@@ -43,16 +45,16 @@ public class loai extends HttpServlet {
 			lbo.Themloai(ma, tl);
 			
 		}
-		if(request.getParameter("xoa")!=null) {
+		else if(request.getParameter("xoa")!=null) {
 			String xoa=request.getParameter("xoa");
 			lbo.Xoa(xoa);
 			
 		}
-		if(request.getParameter("update")!=null) {
-			String ten=request.getParameter("ten");
-			String ml=request.getParameter("ml");
-			lbo.update(ten,ml ,request.getParameter("update"));
-			
+		else if (request.getParameter("update")!=null) {
+			String ten2=request.getParameter("ten2");
+			lbo.Update(ten2, request.getParameter("ml"));
+			System.out.println("ten ne: "+ten2);
+			System.out.println("up ne: "+request.getParameter("update"));
 		}
 		ArrayList<loaibean> dsloai = lbo.getloai();
 		request.setAttribute("dsloai", dsloai);

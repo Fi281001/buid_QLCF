@@ -30,7 +30,7 @@ public class cfbo {
 		ArrayList<cfbean> dsCungTen = new ArrayList<cfbean>();
 		for (cfbean item: ds) {
 			if (item.getTencafe().toLowerCase().trim().contains(tencf.toLowerCase().trim())
-			 || item.getMaLoai().toLowerCase().trim().contains(tencf.toLowerCase().trim())
+			 || item.getMacafe().toLowerCase().trim().contains(tencf.toLowerCase().trim())
 			 )	{
 				dsCungTen.add(item);
 			}
@@ -38,4 +38,33 @@ public class cfbo {
 		
 		return dsCungTen;
 	}
+	public void them_sp(cfbean s) {
+		try {
+			cfdao.them(s);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	public void sua(String ten, String maloai,long soluong, long gia,String ma) {
+		try {
+			cfdao.sua(ten, maloai, soluong, gia,ma);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void xoa(String ma) {
+		try {
+			cfdao.xoa(ma);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
 }

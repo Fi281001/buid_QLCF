@@ -29,9 +29,9 @@ public class loaibo {
 			return 0;
 		}
 	}
-	public int update(String ten, String maloai1, String maloai) {
+	public int Update(String ten, String maloai) {
 		try {
-			return ldao.update(ten, maloai1,maloai);
+			return ldao.update(ten, maloai);
 		} catch (Exception e) {
 			return 0;
 		}

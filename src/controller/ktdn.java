@@ -56,7 +56,7 @@ public class ktdn extends HttpServlet {
 					rd.forward(request, response);
 					}
 			else {
-				RequestDispatcher rd = request.getRequestDispatcher("dangnhap.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("dangnhapsai.jsp");
 				rd.forward(request, response);
 			}
 			

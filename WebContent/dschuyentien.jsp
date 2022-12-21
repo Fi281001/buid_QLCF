@@ -183,7 +183,7 @@
          <div class="container">
           		<div class="QL">
           			 <a class="nav-link" href="loai">Quản lý loại</a>
-          			 <a class="nav-link" href="addcafe">Quản lý cafe</a>
+          			 <a class="nav-link" href="sanpham">Quản lý cafe</a>
           			 <a class="nav-link" href="xacnhanadmin">Xác Nhận Chuyển Tiền</a>
           			 <a class="nav-link" href="dschuyentien">danh sách chuyển tiền</a>
           			 

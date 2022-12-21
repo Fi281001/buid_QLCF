@@ -46,5 +46,60 @@ public class cfdao {
 		
 		
 	}
+	public int them (cfbean s) throws Exception {
+		CoSodao cs = new CoSodao();
+		cs.KetNoi();;
+		
+		String sql = "insert into cafe(macafe,tencafe, soluong, maloai,anh, gia)\r\n"
+				+ "values(?, ?, ?, ?, ?,?)";
+		PreparedStatement cmd = cs.cn.prepareStatement(sql);
+		cmd.setString(1, s.getMacafe());
+		cmd.setString(2, s.getTencafe());
+		cmd.setLong(3, s.getSoLuong());
+		cmd.setString(4, s.getMaLoai());
+		cmd.setString(5, s.getAnh());
+		cmd.setLong(6, s.getGia());
 
+		return cmd.executeUpdate();
+	}
+	public int sua (String ten, String maloai,long soluong, long gia, String ma) throws Exception {
+		CoSodao cs = new CoSodao();
+		cs.KetNoi();
+		
+		String sql = "update cafe\r\n"
+				+ "set tencafe = ?, maloai = ?, soluong = ?, gia = ?\r\n"
+				+ "where macafe = ?";
+		PreparedStatement cmd = cs.cn.prepareStatement(sql);
+		cmd.setString(1, ten);
+		cmd.setString(2, maloai);
+		cmd.setLong(3, soluong);
+		cmd.setLong(4, gia);
+		cmd.setString(5,ma);
+		 int kq=cmd.executeUpdate();
+		 cmd.close();
+		 return kq;
+		
+	}
+	
+	public int xoa (String masp) throws Exception {
+		   CoSodao cs = new CoSodao();
+			cs.KetNoi();
+		 String sql="delete from cafe where macafe=?";
+		 PreparedStatement cmd= cs.cn.prepareStatement(sql);
+		  cmd.setString(1, masp);
+		  int kq=cmd.executeUpdate();
+		 cmd.close();
+		 return kq;
+		 
+	}
+	public static void main(String[] args) {
+		cfdao cf = new cfdao();
+		
+		try {
+			
+		} catch (Exception e) {
+			//TODO: handle exception
+			e.printStackTrace();
+		}
+	}
 }
